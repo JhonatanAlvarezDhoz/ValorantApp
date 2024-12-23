@@ -38,4 +38,6 @@ class AppColors {
     surface: Colors.white,
     error: error,
   );
+
+  static const Color white = Color(0xFFFFFFFF);
 }

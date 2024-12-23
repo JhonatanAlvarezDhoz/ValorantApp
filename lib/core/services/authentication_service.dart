@@ -1,5 +1,5 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import '../network/dio_client.dart';
+import '../config/network/dio_client.dart';
 
 class AuthenticationService {
   final DioClient _dioClient;
