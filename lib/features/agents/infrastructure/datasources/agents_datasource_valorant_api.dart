@@ -12,7 +12,7 @@ class AgentsDatasourceValorantApi extends AgentsDatasource {
     BaseOptions(
       baseUrl: Enviroment.valorantBaseUrl,
       queryParameters: {
-        'language': Language.english,
+        'language': Language.spanish,
       },
     ),
   );
@@ -29,13 +29,11 @@ class AgentsDatasourceValorantApi extends AgentsDatasource {
       throw ServerException('Error del servidor',
           code: response.statusCode.toString(), details: response.data);
     }
-
     final agentsDbResponse = AgentsModels.fromJson(response.data);
 
     final List<Agent> agents = agentsDbResponse.data
         .map((agent) => AgentMapper.agentToEntity(agent))
         .toList();
-
     return agents;
   }
 }

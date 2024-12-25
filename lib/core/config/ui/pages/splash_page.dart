@@ -26,7 +26,7 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   Future<void> validateSession() async {
-    await Future.delayed(const Duration(seconds: 4), () async {
+    await Future.delayed(const Duration(seconds: 1), () async {
       context.go("/base");
     });
   }
@@ -35,28 +35,28 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.backgroundDark,
-      body: Expanded(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Center(
-              child: AnimatedEntryWidget(
-                  duration: const Duration(milliseconds: 4000),
-                  type: AnimationType.fadeIn,
-                  child: Image.asset(
-                    "assets/logos/valorant.png",
-                    width: 280,
-                  )),
-            ),
-            gapH20,
-            const AnimatedLoadingBar(
-                width: 270,
-                progressColor: Color((0xffff4654)),
-                duration: Duration(
-                  milliseconds: 3800,
-                ))
-          ],
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Spacer(),
+          Center(
+            child: AnimatedEntryWidget(
+                duration: const Duration(milliseconds: 4000),
+                type: AnimationType.fadeIn,
+                child: Image.asset(
+                  "assets/logos/valorant.png",
+                  width: 280,
+                )),
+          ),
+          gapH20,
+          const AnimatedLoadingBar(
+              width: 270,
+              progressColor: Color((0xffff4654)),
+              duration: Duration(
+                milliseconds: 3800,
+              )),
+          const Spacer(),
+        ],
       ),
     );
   }

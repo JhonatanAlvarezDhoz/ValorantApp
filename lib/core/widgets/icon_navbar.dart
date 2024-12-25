@@ -10,15 +10,15 @@ class IconNavBottomBar {
 
 List<IconNavBottomBar> iconNavBottomBar = [
   IconNavBottomBar(
-    iconString: "assets/icons/house.svg",
-    title: "Inicio",
+    iconString: "assets/icons/agents.svg",
+    title: "Agentes",
   ),
   IconNavBottomBar(
-    iconString: "assets/icons/ping.svg",
-    title: "Lugares",
+    iconString: "assets/icons/weapons.svg",
+    title: "Armas",
   ),
   IconNavBottomBar(
-    iconString: "assets/icons/user.svg",
-    title: "User",
+    iconString: "assets/icons/maps.svg",
+    title: "Mapas",
   )
 ];

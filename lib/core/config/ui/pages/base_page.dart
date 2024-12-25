@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:valoratapp/core/utils/responsive.dart';
 import 'package:valoratapp/core/widgets/widgets.dart';
-import 'package:valoratapp/features/home/presentation/pages/home.dart';
+import 'package:valoratapp/features/agents/presentation/pages/agents.dart';
 
 class BasePage extends StatefulWidget {
   const BasePage({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
-  _BasePageState createState() => _BasePageState();
+  BasePageState createState() => BasePageState();
 }
 
-class _BasePageState extends State<BasePage> {
+class BasePageState extends State<BasePage> {
   int _currentIndex = 0;
   final PageController _pageController = PageController();
 
@@ -45,15 +44,15 @@ class _BasePageState extends State<BasePage> {
             children: const [
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30),
-                child: HomePage(),
+                child: AgentsPage(),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30),
-                child: HomePage(),
+                child: AgentsPage(),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30),
-                child: HomePage(),
+                child: AgentsPage(),
               ),
             ],
           ),

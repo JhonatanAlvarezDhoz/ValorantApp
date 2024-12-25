@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:valoratapp/core/exceptions/exceptions.dart';
 
@@ -20,8 +22,10 @@ class DioClient {
         queryParameters: queryParameters,
         options: options,
       );
+      log(" Response of get ::${response.statusCode}");
       return _handleResponse(response);
     } on DioException catch (e) {
+      log("CATCH");
       return _handleError(e);
     }
   }
@@ -61,7 +65,8 @@ class DioClient {
         return handler.next(response);
       },
       onError: (DioException e, handler) {
-        // Manejo de errores global
+        log("EEEEEE $e  $handler");
+        // Manejo de errores globale
         return handler.next(e);
       },
     ));
@@ -81,6 +86,7 @@ class DioClient {
   dynamic _handleResponse(Response response) {
     switch (response.statusCode) {
       case 200:
+        return response.data;
       case 201:
         return response.data;
       case 400:

@@ -1,3 +1,4 @@
+export 'package:valoratapp/core/widgets/theme_button.dart';
 export 'package:valoratapp/core/widgets/animations/animated_entry_widget.dart';
 export 'package:valoratapp/core/widgets/animations/animated_loading_bar.dart';
 export 'package:valoratapp/core/widgets/custom_bottom_navigation_bar.dart';

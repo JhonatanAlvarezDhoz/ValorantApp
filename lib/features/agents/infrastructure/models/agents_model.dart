@@ -231,7 +231,8 @@ class Role {
 
   factory Role.fromJson(Map<String, dynamic> json) => Role(
         uuid: json["uuid"],
-        displayName: roleNameValues.map[json["displayName"]]!,
+        displayName:
+            roleNameValuesEnglish.map[json["displayName"]] ?? RoleType.notRol,
         description: json["description"],
         displayIcon: json["displayIcon"],
         assetPath: json["assetPath"],
@@ -239,20 +240,31 @@ class Role {
 
   Map<String, dynamic> toJson() => {
         "uuid": uuid,
-        "displayName": roleNameValues.reverse[displayName],
+        "displayName": roleNameValuesEnglish.reverse[displayName],
         "description": description,
         "displayIcon": displayIcon,
         "assetPath": assetPath,
       };
 }
 
-enum RoleType { controller, duelist, initiator, sentinel }
+enum RoleType { controller, duelist, initiator, centinel, notRol }
 
-final roleNameValues = EnumValues({
+final roleNameValuesEnglish = EnumValues({
   "Controller": RoleType.controller,
   "Duelist": RoleType.duelist,
   "Initiator": RoleType.initiator,
-  "Sentinel": RoleType.sentinel
+  "Centinel": RoleType.centinel,
+  "NotRol": RoleType.notRol
+});
+
+enum RoleTypeSpanish { controlador, duelista, iniciador, centinela, notRol }
+
+final roleNameValuesSpanish = EnumValues({
+  "Controlador": RoleTypeSpanish.controlador,
+  "Duelista": RoleTypeSpanish.duelista,
+  "Iniciador": RoleTypeSpanish.iniciador,
+  "Centinela": RoleTypeSpanish.centinela,
+  "NotRol": RoleTypeSpanish.notRol
 });
 
 class EnumValues<T> {
